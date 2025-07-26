@@ -31,7 +31,8 @@ export default function ProductManagement() {
     stockLevel: "",
     description: "",
     descriptionHindi: "",
-    imageUrl: ""
+    imageUrl: "",
+    freshnessStatus: "fresh"
   });
 
   if (!user || user.role !== "supplier") {
@@ -147,7 +148,8 @@ export default function ProductManagement() {
       stockLevel: "",
       description: "",
       descriptionHindi: "",
-      imageUrl: ""
+      imageUrl: "",
+      freshnessStatus: "fresh"
     });
   };
 
@@ -161,7 +163,8 @@ export default function ProductManagement() {
       stockLevel: product.stockLevel.toString(),
       description: product.description,
       descriptionHindi: product.descriptionHindi,
-      imageUrl: product.imageUrl
+      imageUrl: product.imageUrl,
+      freshnessStatus: product.freshnessStatus || "fresh"
     });
     setEditingProduct(product);
     setIsAddDialogOpen(true);
@@ -182,7 +185,8 @@ export default function ProductManagement() {
       stockLevel: "",
       description: "",
       descriptionHindi: "",
-      imageUrl: ""
+      imageUrl: "",
+      freshnessStatus: "fresh"
     });
     setEditingProduct(null);
   };
@@ -326,10 +330,17 @@ export default function ProductManagement() {
                   <div>
                     <Label>Product Image</Label>
                     <ImageUpload
-                      onImageUploaded={(url) => setNewProduct(prev => ({ ...prev, imageUrl: url }))}
+                      onImageUploaded={(url, freshnessResult) => {
+                        setNewProduct(prev => ({ 
+                          ...prev, 
+                          imageUrl: url,
+                          freshnessStatus: freshnessResult?.status || 'fresh'
+                        }));
+                      }}
                       currentImageUrl={newProduct.imageUrl}
                       buttonText="उत्पाद की फोटो अपलोड करें"
                       uploadPath="products"
+                      enableAIAnalysis={true}
                     />
                     <p className="text-xs text-neutral-500 mt-1">
                       AI will automatically detect freshness

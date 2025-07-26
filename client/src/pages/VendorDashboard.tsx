@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, PauseCircle, AlertTriangle, Bot, Plus, Minus } from "lucide-react";
+import { Calendar, PauseCircle, AlertTriangle, Bot, Plus, Minus, Sparkles, Package } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLocation } from "wouter";
@@ -183,9 +183,18 @@ export default function VendorDashboard() {
                 {t("totalEstimatedCost")}{" "}
                 <span className="text-primary">₹2,450</span>
               </span>
-              <Button className="bg-primary hover:bg-emerald-600">
-                {t("customizeBundle")}
-              </Button>
+              <div className="flex gap-2">
+                <Button 
+                  onClick={() => setLocation("/bundle-recommendation")}
+                  className="bg-amber-600 hover:bg-amber-700 flex items-center gap-2"
+                >
+                  <Sparkles className="h-4 w-4" />
+                  AI बंडल सुझाव
+                </Button>
+                <Button className="bg-primary hover:bg-emerald-600">
+                  {t("customizeBundle")}
+                </Button>
+              </div>
             </div>
           </CardContent>
         </Card>
