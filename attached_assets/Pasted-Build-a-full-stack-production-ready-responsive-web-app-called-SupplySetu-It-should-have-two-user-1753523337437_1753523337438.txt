@@ -1,0 +1,105 @@
+Build a full-stack, production-ready, responsive web app called SupplySetu.
+
+It should have two user roles:
+
+Vendors (street food sellers)
+
+Suppliers (who provide raw materials like vegetables, spices, grains, etc.)
+
+Core Functionalities
+For Vendors:
+Login via mobile number (OTP-based or bypassed for specific numbers)
+
+If number is 1122334455 or 6677889900, bypass OTP and auto-login
+
+Hindi-first interface with multilingual toggle (English + Hindi)
+
+Onboarding: Choose stall type (e.g., Chaat, Juice, South Indian)
+
+📦 AI-Powered Smart Bundle Recommendation
+
+Based on stall type, suggests ideal monthly material list
+
+Vendor can adjust quantities
+
+Products auto-categorized as:
+
+Perishables (veggies/fruits) → weekly delivery
+
+Non-perishables (grains/spices) → monthly delivery
+
+Discover nearby verified suppliers with:
+
+Prices, product list, freshness-tagged images, and reviews
+
+Subscribe to monthly plan, with adjustable bundles
+
+📅 View delivery calendar
+
+🛠 Complaint Center to raise issues with deliveries (image + description + tracking)
+
+🚨 Pause My Delivery:
+
+Temporarily pause deliveries due to illness or stall closure
+
+Choose pause duration: 1 day, 3 days, 1 week, or custom
+
+Auto-notifies supplier; perishable items paused
+
+Optional resume reminder
+
+View previous orders, ratings, and delivery logs
+
+In-app notifications for delivery updates and complaints
+
+For Suppliers:
+Login via phone number (OTP or bypass for test numbers)
+
+Add business name and delivery zones
+
+Upload products with:
+
+Hindi + English labels
+
+Per unit pricing
+
+Stock levels
+
+📸 Image with AI freshness detection badge
+
+View incoming orders
+
+Weekly/monthly delivery calendar
+
+Get alerts if a vendor pauses delivery
+
+Respond to complaints and mark resolved
+
+Built-in AI Features
+Bundle Recommender AI
+
+Based on stall type and past behavior
+
+Suggests editable supply bundles for a full month
+
+Image Freshness Detector
+
+Auto-checks uploaded product images for clarity/spoilage
+
+Adds “Fresh” / “Blurred” / “Low Quality” badges
+
+For Testing
+Bypass OTP if number is 1122334455 or 6677889900
+
+These test logins auto-load with sample orders, stall types, and product data
+
+Technical Constraints
+No admin panel
+
+Fully hosted (Netlify, Vercel, etc.)
+
+Mobile-first design
+
+Built for low-tech users (simple UI, Hindi-first)
+
+Uses only free tools (Firebase/Supabase, React, Tailwind, etc.)
